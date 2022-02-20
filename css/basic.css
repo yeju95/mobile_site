@@ -6,7 +6,7 @@ body {font-family:'Noto Sans Korean','karla',Arial, Helvetica, sans-serif;; }
 
 a {text-decoration:none;}
 
-#wrap {max-width:640px;margin:auto;border:1px solid red;}
+#wrap {max-width:500px;margin:auto;overflow:hidden;}
 header {position:absolute;width:100vw;z-index:10;}
 .header_in {position:relative ; width:100% ;height:40px; margin:auto;z-index:100;text-align:center;}
     .logo {padding-top:20px;display:inline-block;font-size:20px;}

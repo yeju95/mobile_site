@@ -1,12 +1,14 @@
 $(function(){
 
-  //햄버거 버튼을 클릭하면
-  $('.hamb_la').click(function(){
-  $(this).toggleClass('open');
-  $('.menu').slideToggle();
+//햄버거 버튼을 클릭하면
+$('.open_gnb').click(function(){
+    $(this).toggleClass('open');
+    $('.gnb_area').slideToggle();
+    $('.m_gnb_dimmed').fadeToggle(200);
 });
 
-//main-첫번쨰
+
+//main
     var sliderUl = $('#slider>ul');          
     var imgWidth = $('#slider img').width(); 
     var imgNumber = $('#slider li').length;  
@@ -14,12 +16,13 @@ $(function(){
 
     sliderUl.css({width:imgWidth*imgNumber});   
 
-  //button
+
     var right = function(){
         sliderUl.find('li:last-child').insertBefore(sliderUl.find('li:first-child')); 
         sliderUl.css({'margin-left':-500});
         sliderUl.animate({'margin-left':0},300);
     };
+
 
     var left = function(){
         sliderUl.animate({'margin-left':500},300,'swing',function(){
@@ -28,24 +31,27 @@ $(function(){
         });    
     }; 
 
+
     $(".right").click(function(){
         right();
     });
 
+
     $(".left").click(function(){
         left();
     });
+
+
+
 
     var du = 400; 
 
     //슬라이더 방향- 왼쪽에서 오른쪽으로
     setInterval(function(){
       sliderUl.find('li:last-child').insertBefore(sliderUl.find('li:first-child')); 
-      sliderUl.css({'margin-left':-1960});
+      sliderUl.css({'margin-left':-50});
       sliderUl.animate({'margin-left':0},1000);
   },5000);
-
-
 
     //이미지 카드
 $(".first .item").on("mouseenter",function(){
@@ -56,41 +62,31 @@ $(".first .item").on("mouseenter",function(){
 });
 
 
-//슬라이더-slick-두번쨰
+
+
+
+
+//슬라이더-slick
 $('.slides').slick({
-    slidesToShow: 3,
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,             //자동 슬라이드
-    autoplaySpeed:2500,         //이미지 전환속도(정지된 시간 포함)
-    arrows:true,                //양옆 화살표(true가 기본)
-    dots:true,                  //페이지버튼
-    //fade:true,                  //투명도로 전환
-    easing:'swing',
-    initialSlide:6,             //처음 시작하는 이미지(0부터 센다)
-    speed:500,                  //이미지 전환시 만의 속도
-    swipe:true,                //밀어서 움직이기
-    //vertical:true              //위로 전환
-    //rtl:true
+    autoplay: true,
+    autoplaySpeed:2500,
 });
 
-winW = $(window).width();
-if(winW < 769){
-    $('.slides').addClass('mySlider');
 
-    //slick이 적용된 요소에서 발생하는 이벤트를 처리해 주는 함수(꼭 slick 적용전 사용)
-    $('.mySlider').on('init reInit afterChange',function(event, slick, currentSlide, nextSlide){
-        var index = (currentSlide ? currentSlide : slick.currentSlide) + 1; 
-        $('.slick-dots').html('<li>'+index+'/'+(slick.slideCount)+'</li>');
-        //dot이 나올 자리에 삽입
-    });
-
-    $('.mySlider').slick({
-        dots: false, 
-    });
-
-} else {
-    $('.slides').removeClass('mySlider');
-}
+$('.move').slick({
+    dots: true,
+    infinite: true,
+    speed: 200,
+    fade: true,
+    cssEase: 'linear',
+    arrows:false,
+  });
+    
 
 
 

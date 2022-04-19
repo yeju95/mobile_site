@@ -4,7 +4,6 @@ $(function(){
 $('.open_gnb').click(function(){
     $(this).toggleClass('open');
     $('.gnb_area').slideToggle();
-    $('.m_gnb_dimmed').fadeToggle(200);
 });
 
 
@@ -85,6 +84,8 @@ $('.move').slick({
     fade: true,
     cssEase: 'linear',
     arrows:false,
+    autoplay: true,
+    autoplaySpeed:2500,
   });
     
 

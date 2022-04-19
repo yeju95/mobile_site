@@ -42,7 +42,7 @@ header {position:absolute;width:400px;z-index:10;margin:0 2vw;}
 #slider .ul {position:absolute;}
 #slider .ul li {}
 #slider .ul li img {width:640px; height:750px;}
-#slider p { position:relative;font-size:25px;color:#fff;text-shadow:2px 2px 5px black;bottom:230px;left:20px;width:50%;}
+#slider p { position:relative;font-size:25px;color:#fff;text-shadow:2px 2px 5px black;bottom:230px;left:20px;width:10%;}
 
 #slider .btns {}
 #slider .btns button { position:absolute; background-color:transparent; border:0;text-indent:-9999px; cursor:pointer; z-index:90;width:60px;height:60px;background-color:rgba(219, 231, 245, 0.3);border-radius:50%; }
